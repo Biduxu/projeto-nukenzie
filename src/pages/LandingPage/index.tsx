@@ -1,5 +1,6 @@
 import { LandingPageStyled } from "./styled";
 import imageLanding from "../../assets/Image-landing-page.png"
+import { Button } from "../../components/Button";
 
 
 export function LandingPage(){
@@ -16,7 +17,8 @@ export function LandingPage(){
                     <p>de forma rápida e segura</p>
                 </div>
                 <div className="div-buttons">
-                    
+                    <Button text="Login"/>
+                    <Button text="Cadastro"/>
                 </div>
             </div>
         </LandingPageStyled>
