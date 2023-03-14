@@ -1,10 +1,13 @@
-import React from 'react';
+import { LandingPage } from "./pages/LandingPage";
+import { Global } from "./styles/global";
+
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <Global/>
+      <LandingPage/>
+    </>
   );
 }
 
