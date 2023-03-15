@@ -1,5 +1,6 @@
 import { iModal } from "../../pages/LandingPage";
 import { Form } from "../Form/styled";
+import { Input } from "../Input";
 import { ModalStyled } from "./styled";
 
 
@@ -15,7 +16,9 @@ export function Modal({modalRegister, modalLogin, setModal}: iModal){
                             <button onClick={() => setModal(false)}>X</button>
                         </div>
                         <Form>
-
+                            <div className="div-input-error">
+                                
+                            </div>                  
                         </Form>
                     </>
                 ):(
@@ -25,7 +28,9 @@ export function Modal({modalRegister, modalLogin, setModal}: iModal){
                             <button onClick={() => setModal(false)}>X</button>
                         </div>
                         <Form>
-
+                            <div className="div-input-error">
+                                    
+                            </div>  
                         </Form>
                     </>
                 )}
