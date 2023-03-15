@@ -16,6 +16,9 @@ export const ModalStyled = styled.div`
         width: 50%;
         height: max-content;
         border-radius: var(--radius-1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .div-title-close{
@@ -26,6 +29,18 @@ export const ModalStyled = styled.div`
 
     .div-title-close h1{
         color: var(--color-grey-4);
+    }
+
+    .div-input-error{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .error{
+        color: red;
+        font-size: var(--font-6);
     }
 
     

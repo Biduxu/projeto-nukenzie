@@ -1,9 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup"
 import { UserContext } from "../../contexts/UserContext";
 import { iModal } from "../../pages/LandingPage";
-import { formSchemaLogin, formSchemaRegister } from "../../schemas/schemas";
 import { Form } from "../Form/styled";
 import { Input } from "../Input";
 import { ModalStyled } from "./styled";
@@ -15,19 +14,10 @@ interface iFormData{
     confirmPassword?: string
 }
 
-
-export function Modal({modalRegister, modalLogin, setModal}: iModal){
+export function Modal({ modalLogin, setModal, formSchema}: iModal){
 
     const { submitForm } = useContext(UserContext)
-
-    const [formSchema, setFormSchema] = useState({})
     
-    if(modalLogin){
-        setFormSchema(formSchemaLogin)
-    }else{
-        setFormSchema(formSchemaRegister)
-    }
-
     const {register, handleSubmit, formState: {errors}} = useForm<iFormData>({
         mode: "onBlur",
         resolver: yupResolver(formSchema)
@@ -44,8 +34,16 @@ export function Modal({modalRegister, modalLogin, setModal}: iModal){
                         </div>
                         <Form onSubmit={handleSubmit(submitForm)}>
                             <div className="div-input-error">
-                                
-                            </div>                  
+                                <Input placeholder="Digite seu Email" label="Email" type="text" register={register} toRegister="email"/>
+                                <p className="error">{errors.email?.message}</p>
+                            </div>
+                            <div className="div-input-error">
+                                <Input placeholder="Digite sua senha" label="Senha" type="password" register={register} toRegister="password"/>
+                                <p className="error">{errors.password?.message}</p>
+                            </div>
+                            <button type="submit">
+                                Login    
+                            </button>                  
                         </Form>
                     </>
                 ):(
@@ -56,8 +54,24 @@ export function Modal({modalRegister, modalLogin, setModal}: iModal){
                         </div>
                         <Form onSubmit={handleSubmit(submitForm)}>
                             <div className="div-input-error">
-                                    
-                            </div>  
+                                <Input placeholder="Digite seu nome" label="Nome" type="text" register={register} toRegister="name"/>
+                                <p className="error">{errors.name?.message}</p>
+                            </div>
+                            <div className="div-input-error">
+                                <Input placeholder="Digite seu email" label="Email" type="text" register={register} toRegister="email"/>
+                                <p className="error">{errors.email?.message}</p>
+                            </div> 
+                            <div className="div-input-error">
+                                <Input placeholder="Digite sua senha" label="Senha" type="password" register={register} toRegister="password"/>
+                                <p className="error">{errors.password?.message}</p>
+                            </div>
+                            <div className="div-input-error">
+                                <Input placeholder="Confirme sua senha" label="Confirme sua senha" type="password" register={register} toRegister="confirmPassword"/>
+                                <p className="error">{errors.confirmPassword?.message}</p>
+                            </div>
+                            <button type="submit">
+                                Cadastrar    
+                            </button>      
                         </Form>
                     </>
                 )}
