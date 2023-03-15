@@ -1,10 +1,10 @@
 import { ButtonStyled } from "./styled";
 
 
-export function Button({text}: any){
+export function Button({text, onClick}: any){
 
     return (
-        <ButtonStyled>
+        <ButtonStyled onClick={() => {onClick(text)}}>
             {text}
         </ButtonStyled>
     )

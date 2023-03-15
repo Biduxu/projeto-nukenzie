@@ -40,6 +40,7 @@ export const Global = createGlobalStyle`
     }
 
     body{
+        position: relative;
         font-family: 'Nunito', sans-serif;
     }
 

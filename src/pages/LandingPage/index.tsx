@@ -1,9 +1,25 @@
 import { LandingPageStyled } from "./styled";
 import imageLanding from "../../assets/Image-landing-page.png"
 import { Button } from "../../components/Button";
+import { useState } from "react";
+import { Modal } from "../../components/Modal";
 
 
 export function LandingPage(){
+
+    const [modal, setModal] = useState(false)
+    const [modalRegister, setModalRegister] = useState(false)
+    const [modalLogin, setModalLogin] = useState(false)
+
+    function openModal(text: string){
+        if(text === 'Login'){
+            setModalLogin(true)
+            setModal(true)
+        }else{
+            setModalRegister(true)
+            setModal(true)
+        }
+    }
 
     return (
         <LandingPageStyled>
@@ -17,10 +33,19 @@ export function LandingPage(){
                     <p>de forma rápida e segura</p>
                 </div>
                 <div className="div-buttons">
-                    <Button text="Login"/>
-                    <Button text="Cadastro"/>
+                    <Button onClick={openModal} text="Login"/>
+                    <Button onClick={openModal} text="Cadastro"/>
                 </div>
             </div>
+            {modal === true ? (
+                <>
+                    <Modal/>
+                </>
+            ):(
+                <>
+
+                </>
+            )}
         </LandingPageStyled>
     )
     
