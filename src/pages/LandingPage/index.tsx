@@ -8,7 +8,8 @@ import { formSchemaLogin, formSchemaRegister } from "../../schemas/schemas";
 export interface iModal{
     modalLogin: boolean,
     setModal: React.Dispatch<React.SetStateAction<boolean>>,
-    formSchema: any
+    formSchema: any,
+    openModal: (text: string) => void
 }
 
 export function LandingPage(){
@@ -46,12 +47,12 @@ export function LandingPage(){
                 </div>
                 <div className="div-buttons">
                     <Button onClick={openModal} text="Login"/>
-                    <Button onClick={openModal} text="Cadastro"/>
+                    <Button onClick={openModal} text="Cadastrar"/>
                 </div>
             </div>
             {modal === true ? (
                 <>
-                    <Modal modalLogin={modalLogin} setModal={setModal} formSchema={formSchema}/>
+                    <Modal modalLogin={modalLogin} setModal={setModal} formSchema={formSchema} openModal={openModal}/>
                 </>
             ):(
                 <>

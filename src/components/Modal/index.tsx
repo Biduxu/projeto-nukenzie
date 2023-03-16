@@ -6,6 +6,7 @@ import { iModal } from "../../pages/LandingPage";
 import { Form } from "../Form/styled";
 import { Input } from "../Input";
 import { ModalStyled } from "./styled";
+import { Button } from "../Button";
 
 interface iFormData{
     name?: string,
@@ -14,7 +15,7 @@ interface iFormData{
     confirmPassword?: string
 }
 
-export function Modal({ modalLogin, setModal, formSchema}: iModal){
+export function Modal({ modalLogin, setModal, formSchema, openModal}: iModal){
 
     const { submitForm } = useContext(UserContext)
     
@@ -41,10 +42,14 @@ export function Modal({ modalLogin, setModal, formSchema}: iModal){
                                 <Input placeholder="Digite sua senha" label="Senha" type="password" register={register} toRegister="password"/>
                                 <p className="error">{errors.password?.message}</p>
                             </div>
-                            <button type="submit">
+                            <button className="button-modal" type="submit">
                                 Login    
                             </button>                  
                         </Form>
+                        <div className="to-register">
+                            <span>Ainda não possui cadastro?</span>
+                            <Button onClick={openModal} text="Cadastrar"/>
+                        </div>
                     </>
                 ):(
                     <>
@@ -69,7 +74,7 @@ export function Modal({ modalLogin, setModal, formSchema}: iModal){
                                 <Input placeholder="Confirme sua senha" label="Confirme sua senha" type="password" register={register} toRegister="confirmPassword"/>
                                 <p className="error">{errors.confirmPassword?.message}</p>
                             </div>
-                            <button type="submit">
+                            <button className="button-modal" type="submit">
                                 Cadastrar    
                             </button>      
                         </Form>

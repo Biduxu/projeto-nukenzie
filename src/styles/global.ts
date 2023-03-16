@@ -24,7 +24,8 @@ export const Global = createGlobalStyle`
         --font-2: 28px;
         --font-3: 22px;
         --font-5: 16px;
-        --font-6: 12px;
+        --font-6: 14px;
+        --font-7: 12px;
 
         --weight-1: 700;
         --weight-2: 600;
