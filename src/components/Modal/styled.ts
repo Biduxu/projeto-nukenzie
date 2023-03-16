@@ -27,6 +27,18 @@ export const ModalStyled = styled.div`
         align-items: flex-start;
     }
 
+    .close-modal{
+        background-color: var(--color-grey-1);
+        border: transparent;
+        font-size: var(--font-3);
+        font-weight: var(--weight-2);
+        color: var(--color-grey-3);
+    }
+
+    .close-modal:hover{
+        color: var(--color-grey-4);
+    }
+
     .div-title-close h1{
         color: var(--color-grey-4);
     }

@@ -31,7 +31,7 @@ export function Modal({ modalLogin, setModal, formSchema, openModal}: iModal){
                     <>
                         <div className="div-title-close">
                             <h1>Login</h1>
-                            <button onClick={() => setModal(false)}>X</button>
+                            <button className="close-modal" onClick={() => setModal(false)}>X</button>
                         </div>
                         <Form onSubmit={handleSubmit(submitForm)}>
                             <div className="div-input-error">
@@ -55,7 +55,7 @@ export function Modal({ modalLogin, setModal, formSchema, openModal}: iModal){
                     <>
                         <div className="div-title-close">
                             <h1>Cadastro</h1>
-                            <button onClick={() => setModal(false)}>X</button>
+                            <button className="close-modal" onClick={() => setModal(false)}>X</button>
                         </div>
                         <Form onSubmit={handleSubmit(submitForm)}>
                             <div className="div-input-error">

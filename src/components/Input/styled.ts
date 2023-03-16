@@ -14,5 +14,13 @@ export const InputStyled = styled.div`
     input{
         padding: 15px;
         border-radius: var(--radius-1);
+        border: 2px solid var(--color-grey-4);
+        color: var(--color-grey-4);
+        font-size: var(--font-4);
+    }
+
+    input:focus{
+        outline: 2px solid var(--color-primary);
+        border: transparent;
     }
 `
