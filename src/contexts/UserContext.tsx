@@ -19,7 +19,7 @@ export const UserContext = createContext({} as iUserContext)
 
 export function UserProvider({children}: iUserContextProps){
 
-    function submitForm(data: iFormData){
+    async function submitForm(data: iFormData){
         console.log(data)
     }
 

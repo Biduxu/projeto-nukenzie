@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 import { UserContext } from "../../contexts/UserContext";
 import { iModal } from "../../pages/LandingPage";
 import { Form } from "../Form/styled";
